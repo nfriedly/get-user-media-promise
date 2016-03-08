@@ -1,0 +1,39 @@
+{
+  "name": "get-user-media-promise",
+  "description": "Light-weight wrapper for the newer Promise-based MediaDevices.getUserMedia API with a fallback to navigator.getUserMedia (and it's prefixed variants)",
+  "main": "lib/get-user-media-promise.js",
+  "authors": [
+    "Nathan Friedly - http://nfriedly.com"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "getUserMedia",
+    "webkitGetUserMedia",
+    "mozGetUserMedia",
+    "navigator.msGetUserMedia",
+    "get",
+    "user",
+    "media",
+    "promise",
+    "MediaDevices",
+    "shim",
+    "wrapper",
+    "helper",
+    "light",
+    "small",
+    "tiny"
+  ],
+  "homepage": "https://github.com/nfriedly/get-user-media-promise",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
