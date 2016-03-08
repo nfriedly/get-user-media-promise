@@ -1,21 +1,27 @@
 language: node_js
 node_js:
 - stable
+before_install:
+- export CHROME_BIN=chromium-browser
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 before_deploy:
 - npm run minify
 deploy:
--  provider: npm
-   email: nathan@nfriedly.com
-   api_key:
-     secure: m1Ae0WuPQBj4Mc/mn2m0JphWQMiO1I5xLNqm0exadFDSVtoVAuLmsewffrGaQFkzdZq4fSPH9BDGoSe8NouhTXvxxBYh/ikafScedlYBhfzg0qwtn2bfRUtKaoeErW4WFePmRZdEK+iXfu8fd6Z3hFQbN2ixq5wzE0+OrTT5Y5qmXWYbltjuRr7b047aSk4xAvfJ/amyiNa4iimifRrM+IPgrGdtV4G3u20SskwZIqCGTZfij84VD+kpURu0cTqhaLkLAS4s+UiX6Ah2dfJQkLli1EUI2Fm65WRz7pE2ACkynDuJzGWV0QftoG8TPw8bppZKOGFK0g6f3CEM6FnVR8ynMimU9BiJ9035DqQk8gQMb/I+VJ5DaVSrZTOtHT7OMs/Iba5+O2Y0R8jkkXYmYfLjC9vvzcV/sXJe72QaRWT2shItkzGutBSzVe1CzKo/gI2Q9QDKQnzj52/8Rg4Y6Zpb0sFdhvf3dGIQtug6JKq+CuPiehXp5/tDOcs2xW2k56naLBgOmC4vOhMfkL9t8eixtKJ0MmBoIkPkvGdHTNvyZpi52D5NcQ7xk3ZQza3APPBkXA59yb2Nev6TdXh3Bc5IfRe3Cwq+5TJ5zfsJbsOtTTQeX5JdgQiX848S+8ttecxy3tcPF0NjfZhNCPuCoNLGxFfCgOjfXlkthq/aur8=
-   on:
-     tags: true
-     repo: nfriedly/get-user-media-promise
--  provider: releases
+- provider: npm
+  email: nathan@nfriedly.com
+  api_key:
+    secure: m1Ae0WuPQBj4Mc/mn2m0JphWQMiO1I5xLNqm0exadFDSVtoVAuLmsewffrGaQFkzdZq4fSPH9BDGoSe8NouhTXvxxBYh/ikafScedlYBhfzg0qwtn2bfRUtKaoeErW4WFePmRZdEK+iXfu8fd6Z3hFQbN2ixq5wzE0+OrTT5Y5qmXWYbltjuRr7b047aSk4xAvfJ/amyiNa4iimifRrM+IPgrGdtV4G3u20SskwZIqCGTZfij84VD+kpURu0cTqhaLkLAS4s+UiX6Ah2dfJQkLli1EUI2Fm65WRz7pE2ACkynDuJzGWV0QftoG8TPw8bppZKOGFK0g6f3CEM6FnVR8ynMimU9BiJ9035DqQk8gQMb/I+VJ5DaVSrZTOtHT7OMs/Iba5+O2Y0R8jkkXYmYfLjC9vvzcV/sXJe72QaRWT2shItkzGutBSzVe1CzKo/gI2Q9QDKQnzj52/8Rg4Y6Zpb0sFdhvf3dGIQtug6JKq+CuPiehXp5/tDOcs2xW2k56naLBgOmC4vOhMfkL9t8eixtKJ0MmBoIkPkvGdHTNvyZpi52D5NcQ7xk3ZQza3APPBkXA59yb2Nev6TdXh3Bc5IfRe3Cwq+5TJ5zfsJbsOtTTQeX5JdgQiX848S+8ttecxy3tcPF0NjfZhNCPuCoNLGxFfCgOjfXlkthq/aur8=
+  on:
+    tags: true
+    repo: nfriedly/get-user-media-promise
+- provider: releases
   api_key:
     secure: CiDlGq6t7eYvTVSLOa3vm1vp/m9fkcIEfUI4eMLWjr0MVcYVNNkOLXnoMveE//CO9F2MayovB6ZLRHB/aeJ51ViQoNpHU8M43Nnm9rqjyi/NlhOjZVRuRrz0hsMHzeWZy4tyo6WQ7LKtij+CG3O9gwZri+yDQdKPY2WkuBndXie08l41Mk/hR516aoGsydht84XiJT3I+TxvUqq+h/sUqr9Q6FkQ68PrCQ0IsSR90waVbu+nDVQ8OY96MLhq/6I4BMS73ZQIT8fRQ9dXmlvKvhW4rZJvZB1OUdrPEdfxmF0u73w5RrkxWrbUujyJ9hhTmouS0tPWVZ8eagUnxyVV06FtDF9KotWa5QiAwPZbC34RhvEO4ulrM+I14IJRYERSwCVwldUe3TsvfqP2LnYD/oQ6cXFM5e9BMgTnuIrVnu6/tyo60Th37fH/pUeCCPcY5KppxzG0kzhpudt0JTwBQz5oZlGVWpSuRkGkWwm/KwFmc3fKZThnkb+qfKLeIbl00qcw0TdAOgn66usBbEc0yCPou+esrx6yRUGoCOc7H7g89SZsBtIK/QcxYy459STi9Z8SDVWYEXrllvgUzXkc7x9JQlXuJo3OOy4trj9DUld7Jc18w0bAjxWxfePwiQq2HwiKAk5o1NBcm3HslR7njq0TYeaBXhKFZyc+8VRcIsY=
   file:
   - lib/get-user-media-promise.js
-  - get-user-media-promise.min.js
+  - dist/get-user-media-promise.min.js
+  skip_cleanup: true
   on:
+    tags: true
     repo: nfriedly/get-user-media-promise
