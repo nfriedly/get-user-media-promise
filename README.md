@@ -8,27 +8,33 @@ Light-weight wrapper for the newer [Promise]-based [MediaDevices.getUserMedia] A
 
 Less than 0.5kb after minification and gzipping (about 5% of the size of the [other] getUserMedia shim).
 
-**Note**: this will only work in web browsers.
+**Note**: this will only work in web browsers, and only [fairly current ones](http://caniuse.com/#feat=stream) at that. 
+
+Additionally, this library does not attempt to reformat constraints for cross-browser support, so if you need advanced audio/video constraints, the [other library][other] may be a better choice.
 
 ## Installation:
 
+### npm
+
     npm install --save get-user-media-promise
     
-or
+### Bower
 
     bower install --save get-user-media-promise
     
-or download the [latest release](https://github.com/nfriedly/get-user-media-promise/releases) from GitHub.
+### Standalone
+ 
+ Download the [latest release](https://github.com/nfriedly/get-user-media-promise/releases) from GitHub.
 
 ## Usage: 
 
  * With a bundler such as Require.js, Browserify, or WebPack: require() the module and it returns a `getUserMedia()` method that will always return a Promise or Promise-like object.
- * As a stand-alone library: when neither `define()` nor `module` are defined, the module will go into pollyfill mode, setting `navigator.mediaDevices.getUserMedia()` if that method is not already defined and doing nothing if it is.
+ * As a standalone library: when neither `define()` nor `module` are defined, the module will go into pollyfill mode, setting `navigator.mediaDevices.getUserMedia()` if that method is not already defined and doing nothing if it is.
  
  Then:
  
 ```js
-var getUserMedia = require('get-user-media-promise'); // or navigator.mediaDevices.getUserMedia when stand-alone
+var getUserMedia = require('get-user-media-promise'); // or navigator.mediaDevices.getUserMedia when used standalone
 
 getUserMedia({audio: true, video: true})
   .then(function(mediaStream) {
