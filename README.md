@@ -1,5 +1,9 @@
 # get-user-media-promise
 
+[![Build Status](https://travis-ci.org/nfriedly/get-user-media-promise.svg?branch=master)](https://travis-ci.org/nfriedly/get-user-media-promise)
+[![npm-version](https://img.shields.io/npm/v/get-user-media-promise.svg)](https://www.npmjs.com/package/get-user-media-promise)
+![bower-version](http://badge.fury.io/bo/get-user-media-promise.svg)
+
 Light-weight wrapper for the newer [Promise]-based [MediaDevices.getUserMedia] API with a fallback to the deprecated [navigator.getUserMedia] (and it's prefixed variants).
 
 Less than 0.5kb after minification and gzipping (about 5% of the size of the [other] getUserMedia shim).
