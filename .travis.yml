@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-- node
+- stable
+deploy:
+  provider: npm
+  email: nathan@nfriedly.com
+  api_key:
+    secure: m1Ae0WuPQBj4Mc/mn2m0JphWQMiO1I5xLNqm0exadFDSVtoVAuLmsewffrGaQFkzdZq4fSPH9BDGoSe8NouhTXvxxBYh/ikafScedlYBhfzg0qwtn2bfRUtKaoeErW4WFePmRZdEK+iXfu8fd6Z3hFQbN2ixq5wzE0+OrTT5Y5qmXWYbltjuRr7b047aSk4xAvfJ/amyiNa4iimifRrM+IPgrGdtV4G3u20SskwZIqCGTZfij84VD+kpURu0cTqhaLkLAS4s+UiX6Ah2dfJQkLli1EUI2Fm65WRz7pE2ACkynDuJzGWV0QftoG8TPw8bppZKOGFK0g6f3CEM6FnVR8ynMimU9BiJ9035DqQk8gQMb/I+VJ5DaVSrZTOtHT7OMs/Iba5+O2Y0R8jkkXYmYfLjC9vvzcV/sXJe72QaRWT2shItkzGutBSzVe1CzKo/gI2Q9QDKQnzj52/8Rg4Y6Zpb0sFdhvf3dGIQtug6JKq+CuPiehXp5/tDOcs2xW2k56naLBgOmC4vOhMfkL9t8eixtKJ0MmBoIkPkvGdHTNvyZpi52D5NcQ7xk3ZQza3APPBkXA59yb2Nev6TdXh3Bc5IfRe3Cwq+5TJ5zfsJbsOtTTQeX5JdgQiX848S+8ttecxy3tcPF0NjfZhNCPuCoNLGxFfCgOjfXlkthq/aur8=
+  on:
+    tags: true
+    repo: nfriedly/get-user-media-promise
