@@ -4,7 +4,8 @@
   "description": "Light-weight wrapper for the newer Promise-based MediaDevices.getUserMedia API with a fallback to navigator.getUserMedia (and it's prefixed variants)",
   "main": "lib/get-user-media-promise.js",
   "scripts": {
-    "test": "eslint lib/*.js test/*.js && karma start --single-run"
+    "test": "eslint lib/*.js test/*.js && karma start --single-run",
+    "minify": "uglifyjs --screw-ie-8 --compress --mangle --output get-user-media-promise.min.js lib/get-user-media-promise.js"
   },
   "repository": {
     "type": "git",
@@ -42,6 +43,7 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-firefox-launcher": "^0.1.7",
     "karma-mocha": "^0.2.1",
-    "mocha": "^2.4.4"
+    "mocha": "^2.4.4",
+    "uglify-js": "^2.6.2"
   }
 }
