@@ -39,14 +39,14 @@
   "homepage": "https://github.com/nfriedly/get-user-media-promise#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
-    "envify": "^3.4.0",
-    "eslint": "^2.3.0",
-    "karma": "^0.13.19",
+    "envify": "^4.0.0",
+    "eslint": "^3.13.1",
+    "karma": "^1.3.0",
     "karma-browserify": "^5.0.1",
-    "karma-chrome-launcher": "^0.2.2",
-    "karma-firefox-launcher": "^0.1.7",
-    "karma-mocha": "^0.2.1",
-    "mocha": "^2.4.4",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^3.2.0",
     "uglify-js": "^2.6.2"
   }
 }
