@@ -22,7 +22,7 @@ describe('getUserMedia', function() {
         .catch(function() {
           done();
         });
-    })
+    });
   } else {
     it('should return a MediaStream instance in supported browsers', function() {
       return getUserMedia({audio: true})
