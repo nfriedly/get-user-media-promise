@@ -70,7 +70,7 @@ module.exports = function(config) {
     // there's a handy list of chrome flags at
     customLaunchers: {
       ChromeWithPrerecordedMic: {
-        base: 'Chrome',
+        base: 'ChromeHeadless',
         // --no-sandbox is required for travis-ci
         flags: ['--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream', /*'--use-file-for-fake-audio-capture=test/resources/audio.wav',*/ '--no-sandbox']
       },
