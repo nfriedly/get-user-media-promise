@@ -4,6 +4,9 @@ node_js:
 dist: trusty
 addons:
   chrome: stable
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
 before_deploy:
 - npm run minify
 deploy:
