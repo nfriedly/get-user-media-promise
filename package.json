@@ -1,6 +1,6 @@
 {
   "name": "get-user-media-promise",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Light-weight wrapper for the newer Promise-based MediaDevices.getUserMedia API with a fallback to navigator.getUserMedia (and it's prefixed variants)",
   "main": "lib/get-user-media-promise.js",
   "scripts": {
