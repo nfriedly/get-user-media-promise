@@ -5,14 +5,14 @@ var getUserMedia = require('../lib/get-user-media-promise');
 
 //var chrome = navigator.userAgent.indexOf('Chrome') >= 0;
 var firefox = navigator.userAgent.indexOf('Firefox') >= 0;
-var travis = process.env.TRAVIS;
+var isCI = process.env.CI;
 
 describe('getUserMedia', function() {
   it('should exist', function() {
     assert(getUserMedia)
   });
 
-  if (firefox && travis) {
+  if (firefox && isCI) {
     // firefox can auto-approve gum requests but cannot fake the output. So, on travis CI it always rejects them with NO_DEVICES_FOUND
     it('should reject when there are no audio devices available', function(done) {
       getUserMedia({audio: true, video: true})

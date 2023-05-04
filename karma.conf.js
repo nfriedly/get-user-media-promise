@@ -74,11 +74,14 @@ module.exports = function(config) {
         // --no-sandbox is required for travis-ci
         flags: ['--use-fake-device-for-media-stream','--use-fake-ui-for-media-stream', /*'--use-file-for-fake-audio-capture=test/resources/audio.wav',*/ '--no-sandbox']
       },
-      // automatically approve getUserMedia calls
+     
       FirefoxAutoGUM: {
-        base: 'Firefox',
+        base: 'FirefoxHeadless',
         prefs: {
-          'media.navigator.permission.disabled': true
+          // automatically approve getUserMedia calls
+          'media.navigator.permission.disabled': true,
+          // provide fake data (also automatically approved, but meh)
+          'firefox media.navigator.streams.fake': true
         }
       }
     },
