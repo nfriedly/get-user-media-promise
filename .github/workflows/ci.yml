@@ -17,7 +17,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Run headless test
-      uses: coactions/setup-xvfb@v1
+      uses: tomasz-rekawek/setup-xvfb@v1
       with:
         run: npm test
         # working-directory: ./ #optional
