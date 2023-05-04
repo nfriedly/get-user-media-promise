@@ -79,7 +79,7 @@ module.exports = function(config) {
         base: 'Firefox',
         prefs: {
           // automatically approve getUserMedia calls
-          'media.navigator.permission.disabled': true
+          'media.navigator.permission.disabled': true,
           // provide fake data (also automatically approved, but meh)
           'firefox media.navigator.streams.fake': true
         }
