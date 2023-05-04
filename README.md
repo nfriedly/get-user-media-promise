@@ -1,6 +1,6 @@
 # get-user-media-promise
 
-[![Build Status](https://travis-ci.org/nfriedly/get-user-media-promise.svg?branch=master)](https://travis-ci.org/nfriedly/get-user-media-promise)
+[![CI](https://github.com/nfriedly/get-user-media-promise/actions/workflows/ci.yml/badge.svg)](https://github.com/nfriedly/get-user-media-promise/actions/workflows/ci.yml)
 [![npm-version](https://img.shields.io/npm/v/get-user-media-promise.svg)](https://www.npmjs.com/package/get-user-media-promise)
 ![bower-version](http://badge.fury.io/bo/get-user-media-promise.svg)
 
