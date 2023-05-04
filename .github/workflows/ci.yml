@@ -7,16 +7,18 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  Test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Test
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: 18
         cache: 'npm'
-    - run: export DISPLAY=:99.0
-    - run: sh -e /etc/init.d/xvfb start
     - run: npm ci
-    - run: npm test
+    - name: Run headless test
+      uses: coactions/setup-xvfb@v1
+      with:
+        run: npm test
+        # working-directory: ./ #optional
+        # options: #optional
