@@ -15,7 +15,7 @@ jobs:
       with:
         node-version: 18
         cache: 'npm'
-    - run: npm ci
+    - run: npm i
     - name: Run headless test
       uses: tomasz-rekawek/setup-xvfb@1.0.2
       with:
