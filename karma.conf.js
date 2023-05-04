@@ -76,7 +76,7 @@ module.exports = function(config) {
       },
      
       FirefoxAutoGUM: {
-        base: 'Firefox',
+        base: 'FirefoxHeadless',
         prefs: {
           // automatically approve getUserMedia calls
           'media.navigator.permission.disabled': true,
