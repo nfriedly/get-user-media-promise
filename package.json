@@ -4,7 +4,9 @@
   "description": "Light-weight wrapper for the newer Promise-based MediaDevices.getUserMedia API with a fallback to navigator.getUserMedia (and it's prefixed variants)",
   "main": "lib/get-user-media-promise.js",
   "scripts": {
-    "test": "eslint lib/*.js test/*.js && karma start --single-run",
+    "test": "npm run lint && npm run test-browser",
+    "lint": "eslint lib/*.js test/*.js",
+    "test-browser": "karma start --single-run",
     "minify": "mkdir dist; uglifyjs --compress --mangle --output dist/get-user-media-promise.min.js lib/get-user-media-promise.js"
   },
   "repository": {
@@ -38,15 +40,17 @@
   },
   "homepage": "https://github.com/nfriedly/get-user-media-promise#readme",
   "devDependencies": {
-    "browserify": "^17.0.0",
+    "@eslint/js": "^9.26.0",
+    "browserify": "^17.0.1",
     "envify": "^4.1.0",
-    "eslint": "^7.15.0",
-    "karma": "^6.3.14",
-    "karma-browserify": "^8.0.0",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-firefox-launcher": "^2.1.0",
+    "eslint": "^9.26.0",
+    "globals": "^16.1.0",
+    "karma": "^6.4.4",
+    "karma-browserify": "^8.1.0",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-firefox-launcher": "^2.1.3",
     "karma-mocha": "^2.0.1",
-    "mocha": "^10.1.0",
-    "uglify-js": "^3.12.1"
+    "mocha": "^11.2.2",
+    "uglify-js": "^3.19.3"
   }
 }
