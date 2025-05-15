@@ -41,6 +41,7 @@
     "browserify": "^17.0.1",
     "envify": "^4.1.0",
     "eslint": "^9.26.0",
+    "globals": "^16.1.0",
     "karma": "^6.4.4",
     "karma-browserify": "^8.1.0",
     "karma-chrome-launcher": "^3.2.0",
