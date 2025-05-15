@@ -1,18 +1,13 @@
-const {
-    defineConfig,
-} = require("eslint/config");
-
+const { defineConfig } = require("eslint/config");
 const globals = require("globals");
+const js = require("@eslint/js");
 
-module.exports = defineConfig([{
-    languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.commonjs,
-            ...globals.amd,
-            "Promise": false,
-        },
-    },
-
-    "extends": "eslint:recommended",
-}]);
+module.exports = defineConfig([
+	{ files: ["**/*.js"], languageOptions: { globals: {
+        ...globals.browser, 
+        ...globals.node, 
+        ...globals.amd,
+        ...globals.mocha, // tests only
+    } } },
+	{ files: ["**/*.js"], plugins: { js }, extends: ["js/recommended"] },
+]);

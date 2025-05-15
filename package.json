@@ -4,7 +4,9 @@
   "description": "Light-weight wrapper for the newer Promise-based MediaDevices.getUserMedia API with a fallback to navigator.getUserMedia (and it's prefixed variants)",
   "main": "lib/get-user-media-promise.js",
   "scripts": {
-    "test": "eslint lib/*.js test/*.js && karma start --single-run",
+    "test": "npm run lint && npm run test-browser",
+    "lint": "eslint lib/*.js test/*.js",
+    "test-browser": "karma start --single-run",
     "minify": "mkdir dist; uglifyjs --compress --mangle --output dist/get-user-media-promise.min.js lib/get-user-media-promise.js"
   },
   "repository": {
@@ -38,6 +40,7 @@
   },
   "homepage": "https://github.com/nfriedly/get-user-media-promise#readme",
   "devDependencies": {
+    "@eslint/js": "^9.26.0",
     "browserify": "^17.0.1",
     "envify": "^4.1.0",
     "eslint": "^9.26.0",
