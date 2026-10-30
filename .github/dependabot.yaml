@@ -18,3 +18,8 @@ updates:
     directory: '/'
     schedule:
       interval: 'monthly'
+    # and group all actions updates into a single PR
+    groups:
+      github-actions:
+        patterns:
+          - '*'
