@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/nfriedly/get-user-media-promise#readme",
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^10.0.1",
     "browserify": "^17.0.1",
     "envify": "^4.1.0",
     "eslint": "^10.13.0",
